@@ -4,6 +4,8 @@
       <Discover v-if="$route.params.id === 'discover'"></Discover>
       <Roche v-if="$route.params.id === 'roche'"></Roche>
       <Vitac v-if="$route.params.id === 'vitac'"></Vitac>
+      <Pulsar v-if="$route.params.id === 'pulsar'"></Pulsar>
+
     </div>
 </template>
 
@@ -12,6 +14,7 @@ import Wuf from '@/components/Wuf'
 import Discover from '@/components/Discover'
 import Roche from '@/components/Roche'
 import Vitac from '@/components/Vitac'
+import Pulsar from '@/components/Pulsar'
 
 export default {
     name: 'Project',
@@ -19,7 +22,8 @@ export default {
         Wuf,
         Discover,
         Roche, 
-        Vitac
+        Vitac,
+        Pulsar
     }
 
 }

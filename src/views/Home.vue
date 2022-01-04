@@ -20,7 +20,7 @@
          </div>
 
          <div>
-           <p>Motos Discovery</p>
+           <p>Motos Discover</p>
            <router-link to="/project/discover">Escapate con Discover</router-link>
          </div>
 
@@ -35,8 +35,8 @@
          </div>
 
          <div>
-           <p>Pulsar</p>
-           <router-link to="/project/pulsar">Pulsar</router-link>
+           <p>Motos Pulsar</p>
+           <router-link to="/project/pulsar">Pulsar- Unete al Poder</router-link>
          </div>
 
          <div>
@@ -51,7 +51,7 @@
 
          <div>
            <p>Jaime Pesaque</p>
-           <summary>100 Grados</summary>
+           <summary>500 Grados</summary>
          </div>
        </div>
    </section>
@@ -103,13 +103,40 @@ export default {
 
 <style lang="scss">
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+
 
 @mixin poppins-regular {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1.7rem;
   line-height: 2.53rem;
+
+  @include for-phone-only() {
+    font-size: 1.6rem;
+  }
 }
 
 @mixin poppins-medium {
@@ -117,6 +144,11 @@ export default {
   font-weight: 500;
   line-height: 114px;
   font-size: 7.5rem;
+
+  @include for-phone-only() {
+    font-size: 3.3rem;
+    line-height: 45px;
+  }
 }
  
  .hero {
@@ -124,9 +156,19 @@ export default {
    grid-template-columns: 1fr 1fr;
    padding: 10rem;
 
+   @include for-phone-only() {
+     grid-template-columns: 100%;
+     padding: 0.5rem;
+   }
+
     h1 {
        @include poppins-medium();
        grid-column: span 2;
+
+       @include for-phone-only() {
+         grid-column: span 1;
+       }
+       
    }
  }
 
@@ -135,16 +177,31 @@ export default {
    grid-template-columns: 1fr 1fr;
    grid-column-gap: 20px;
    padding: 8rem;
+     @include poppins-regular();
+   
+   p {
+     @include for-phone-only() {
+       margin: 2rem 0;
+     }
+   }
 
-   @include poppins-regular();
+   @include for-phone-only() {
+     grid-template-columns: 100%;
+     padding: 0.5rem;
+   }
+
+ 
 
    .timeline {
 
      div {
+
        display:grid;
        grid-template-columns: 1fr 1fr;
        grid-column-gap: 20px;
        margin-bottom: 16rem;
+
+     
 
      }
    }
