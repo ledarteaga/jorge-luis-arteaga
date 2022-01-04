@@ -1,4 +1,11 @@
-# portafolio-jorge
+##Portafolio Jorge Luis Arteaga
+Una SPA hecha con Vue 2, utilizando la herramienta de Router.
+
+
+
+
+
+
 
 ## Project setup
 ```
