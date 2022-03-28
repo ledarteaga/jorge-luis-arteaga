@@ -12,73 +12,11 @@
 
 
    <section class="projects">
-       <p>Projects</p>
        <div class="timeline">
-         <div>
-           <p>WUF</p>
-           <router-link to="/project/wuf">Club Wuf</router-link>
-         </div>
-
-         <div>
-           <p>Motos Discover</p>
-           <router-link to="/project/discover">Escapate con Discover</router-link>
-         </div>
-
-         <div>
-           <p>Vita C</p>
-           <router-link to="/project/vitac">Vita C</router-link>
-         </div>
-
-         <div>
-           <p>Roche</p>
-           <router-link to="/project/roche">Roche</router-link>
-         </div>
-
-         <div>
-           <p>Motos Pulsar</p>
-           <router-link to="/project/pulsar">Pulsar- Unete al Poder</router-link>
-         </div>
-
-         <div>
-           <p>Jaime Pesaque</p>
-           <summary>MAYTA</summary>
-         </div>
-
-         <div>
-           <p>Jaime Pesaque</p>
-           <summary>MAD BURGER</summary>
-         </div>
-
-         <div>
-           <p>Jaime Pesaque</p>
-           <summary>500 Grados</summary>
-         </div>
-       </div>
-   </section>
-
-   <section class="experience">
-       <p>Experience</p>
-       <div class="timeline">
-         <div>
-           <p>2018 - 2019</p>
-           <summary>HEYY Solutions</summary>
-         </div>
-
-         <div>
-           <p>2019 - 2020</p>
-           <summary>Base Media</summary>
-         </div>
-
-         <div>
-           <p>2020 - 2020</p>
-           <summary>Mayo Group</summary>
-         </div>
-
-         <div>
-           <p>2020 - Present</p>
-           <summary>Jaime Pesaque Restaurants</summary>
-         </div>
-
+         <Discover />
+         <Wuf />
+         <Roche />
+          
        </div>
    </section>
 
@@ -92,11 +30,18 @@
 
 <script>
 // @ is an alias to /src
+import Discover from '@/components/Discover'
+import Wuf from '@/components/Wuf'
+import Roche from '@/components/Roche'
+
+
 
 export default {
   name: 'Home',
   components: {
-    
+    Discover,
+    Wuf,
+    Roche
   }
 }
 </script>
@@ -107,6 +52,11 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
@@ -146,8 +96,8 @@ export default {
   font-size: 7.5rem;
 
   @include for-phone-only() {
-    font-size: 3.3rem;
-    line-height: 45px;
+    font-size: 5.3rem;
+    line-height: 57px;
   }
 }
  
@@ -172,7 +122,7 @@ export default {
    }
  }
 
- .bio, .projects, .experience, .contact {
+ .bio, .experience, .contact {
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-column-gap: 20px;
@@ -187,22 +137,34 @@ export default {
 
    @include for-phone-only() {
      grid-template-columns: 100%;
-     padding: 0.5rem;
+     padding: 1.5rem;
    }
 
  
 
-   .timeline {
+  //  .timeline {
 
-     div {
+  //    div {
 
-       display:grid;
-       grid-template-columns: 1fr 1fr;
-       grid-column-gap: 20px;
-       margin-bottom: 16rem;
+  //      display:grid;
+  //      grid-template-columns: 1fr 1fr;
+  //      grid-column-gap: 20px;
+  //      margin-bottom: 16rem;
 
      
 
+  //    }
+  //  }
+ }
+
+ .projects {
+
+
+    p {
+       @include poppins-regular();
+     @include for-phone-only() {
+       margin: 2rem 0;
+      
      }
    }
  }

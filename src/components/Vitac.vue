@@ -4,8 +4,19 @@
         <p> Vita C </p>
     </div>
     <div class="gallery">
-        <img src="@/assets/vitac-1.png" alt="VitaC 1">
-        <img src="@/assets/vitac-2.png" alt="VitaC 2">
+
+       <picture>
+          <source srcset="@/assets/vitac-1.webp" type="image/webp">
+          <img srcset="@/assets/vitac-1.png" type="image/png">
+    </picture>
+
+    <picture>
+          <source srcset="@/assets/vitac-2.webp" type="image/webp">
+          <img srcset="@/assets/vitac-2.png" type="image/png">
+    </picture>
+
+        <!-- <img src="@/assets/vitac-1.png" alt="VitaC 1">
+        <img src="@/assets/vitac-2.png" alt="VitaC 2"> -->
     </div>
     </div>
 </template>
